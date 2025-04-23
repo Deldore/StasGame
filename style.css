@@ -54,7 +54,6 @@ body {
 
 #message {
     position: absolute;
-    max-width: 65%;
     min-width: 40%;
     max-height: 80%;
     border-radius: 15px;
@@ -66,20 +65,20 @@ body {
     scrollbar-color: #ccc transparent;
     opacity: 0;
 
-    /* Улучшенные правила переноса */
-    word-break: break-word;
-    overflow-wrap: break-word;
-    hyphens: manual; /* Отключаем auto, так как он ненадежен */
+     /*Улучшенные правила переноса */
+    /*word-break: break-word;*/
+    /*overflow-wrap: break-word;*/
+    /*hyphens: manual; !* Отключаем auto, так как он ненадежен *!*/
 
     /* Для Safari */
-    -webkit-hyphens: auto;
-    -webkit-word-break: break-word;
+    /*-webkit-hyphens: auto;*/
+    /*-webkit-word-break: break-word;*/
 
     p, h1 {
         max-width: 100%;
-        /* Добавляем мягкие переносы вручную */
-        hyphens: auto;
-        -webkit-hyphens: auto;
+        /*!* Добавляем мягкие переносы вручную *!*/
+        /*hyphens: auto;*/
+        /*-webkit-hyphens: auto;*/
     }
 
     h1 {

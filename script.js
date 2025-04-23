@@ -4,15 +4,45 @@ import Missions from "./scripts/missions";
 
 const btn = document.getElementById('start_btn')
 const startBtn = document.getElementById('start_game')
+const maxMessageWidth = 0.7
+
+const message = document.getElementById('message');
+const p = message.querySelector('p');
+message.style.maxWidth = `${maxMessageWidth * 100}%`;
+function applyHyphens() {
+    if (message.clientWidth >= window.innerWidth * maxMessageWidth) {
+        p.style.hyphens = 'auto'
+        p.style.whiteSpace = 'wrap'
+        message.style.whiteSpace = 'wrap'
+        message.style.hyphens = 'manual'
+        message.style.wordBreak = 'break-word'
+        message.style.overflowWrap = 'break-word'
+        console.log(message.clientWidth, message.style.maxWidth)
+    } else {
+        p.style.hyphens = ''
+        p.style.whiteSpace = 'nowrap'
+        message.style.hyphens = ''
+        message.style.wordBreak = 'keep-all'
+        message.style.overflowWrap = 'normal'
+        message.style.whiteSpace = 'nowrap'
+        console.log('nomax')
+    }
+}
+
+window.addEventListener('load', applyHyphens);
+window.addEventListener('resize', applyHyphens);
+
+const observer = new ResizeObserver(applyHyphens);
+observer.observe(message);
 
 Message.init();
 
 btn.onclick = async () => {
-    await Loading.click();
+    // await Loading.click();
+    await Missions.startGame()
 }
 
 startBtn.onclick = async () => {
     startBtn.style.display = 'none';
-    await Missions.startGame()
 }
 

@@ -30,8 +30,8 @@ export default class Loading {
                                 }, 500);
                             }
                         }, 500);
-                    }, 5000);
-                }, 5000);
+                    }, 3000);
+                }, 3000);
             }, 8000);
 
             btn.style.display = 'none';

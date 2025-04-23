@@ -12,7 +12,7 @@ export class Message {
         this.skipButton = this.container.querySelector('#skip');
         this.nextButton = this.container.querySelector('#next');
         this.container.style.opacity = 0;
-        this.container.style.transition = 'all linear .5s';
+        this.container.style.transition = 'opacity linear .5s';
         this.container.style.display = 'none';
     }
 
