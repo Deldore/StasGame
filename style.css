@@ -6,35 +6,98 @@ body {
     background: black;
     overflow: hidden;
 }
-#img {
-    position: absolute;
-    top: 0;
-    left: 0;
-    height: 100vh;
-    width: 100vw;
-    background-image: url("caps/basa1.jpg");
-    background-size: cover;
-    background-position: center center;
-    opacity: 0;
-    z-index: -10;
-    transition: 2s;
-}
-#loading_title {
-    font-family: "Arial Black";
-    color: white;
-    transition: .9s;
-}
+#loading {
+    transition: all linear .5s;
 
-#start_btn {
+    #caps {
+        position: absolute;
+        top: 0;
+        left: 0;
+        height: 100vh;
+        width: 100vw;
+        background-image: url("caps/basa1.jpg");
+        background-size: cover;
+        background-position: center center;
+        opacity: 0;
+        z-index: -10;
+        transition: 2s;
+    }
+    #loading_title {
+        font-family: "Arial Black";
+        color: white;
+        transition: .9s;
+    }
+
+    #start_btn {
+        background: none;
+        border: 1px solid white;
+        color: white;
+        padding: 15px 20px;
+        border-radius: 5px;
+        transition: .4s;
+    }
+
+    #start_btn:hover {
+        background: white;
+        color: black;
+    }
+}
+#start_game {
     background: none;
-    border: 1px solid white;
+    /*border: 1px solid white;*/
     color: white;
     padding: 15px 20px;
     border-radius: 5px;
     transition: .4s;
+    display: none;
 }
 
-#start_btn:hover {
+#message {
+    position: absolute;
+    max-width: 65%;
+    min-width: 40%;
+    max-height: 80%;
+    border-radius: 15px;
+    padding: .5% 2%;
     background: white;
-    color: black;
+    box-sizing: border-box;
+    overflow: auto;
+    scrollbar-width: thin;
+    scrollbar-color: #ccc transparent;
+    opacity: 0;
+
+    /* Улучшенные правила переноса */
+    word-break: break-word;
+    overflow-wrap: break-word;
+    hyphens: manual; /* Отключаем auto, так как он ненадежен */
+
+    /* Для Safari */
+    -webkit-hyphens: auto;
+    -webkit-word-break: break-word;
+
+    p, h1 {
+        max-width: 100%;
+        /* Добавляем мягкие переносы вручную */
+        hyphens: auto;
+        -webkit-hyphens: auto;
+    }
+
+    h1 {
+        font-family: "Arial Black";
+        font-size: 200%;
+    }
+
+    p {
+        font-family: Arial;
+        font-size: 120%;
+    }
+
+    button {
+        background: none;
+        border: 1px solid black;
+        font-family: Arial;
+        font-size: 120%;
+        padding: 5px 10px;
+        border-radius: 5px;
+    }
 }

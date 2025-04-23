@@ -1,0 +1,28 @@
+{
+  "name": "stasgame",
+  "version": "1.0.0",
+  "main": "script.js",
+  "scripts": {
+    "dev": "vite --open",
+    "build": "vite build",
+    "preview": "vite preview"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Deldore/StasGame.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Deldore/StasGame/issues"
+  },
+  "homepage": "https://github.com/Deldore/StasGame#readme",
+  "description": "",
+  "devDependencies": {
+    "http-server": "^14.1.1",
+    "vite": "^6.3.2",
+    "webpack": "^5.99.6",
+    "webpack-cli": "^6.0.1"
+  }
+}
