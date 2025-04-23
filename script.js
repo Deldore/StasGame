@@ -12,6 +12,7 @@ btn.onclick = async () => {
 }
 
 startBtn.onclick = async () => {
+    startBtn.style.display = 'none';
     await Missions.startGame()
 }
 
