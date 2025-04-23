@@ -1,6 +1,6 @@
 const text = 'Стас гей...('
-const el = document.getElementById('stas')
-const btn = document.getElementById('btn')
+const el = document.getElementById('loading_title')
+const btn = document.getElementById('start_btn')
 
 const colors = [
     'red',
@@ -17,21 +17,26 @@ var j = 1;
 var timer;
 
 function click () {
+    let slides = 5 + Math.floor(Math.random() * 5);
     setTimeout(() => {
-        document.getElementById("img").style.opacity = 1;
+        document.getElementById("caps").style.opacity = 1;
         setTimeout(() => {
-            setInterval(() => {
-                document.getElementById("img").style.transition = `.5s linear`;
-                // document.getElementById("img").style.transform = `rotate(180deg)`;
-                // document.getElementById("img").style.transform = `rotate(181deg)`;
-                // document.getElementById("img").style.width = `0`;
-                // document.getElementById("img").style.height = `0`;
+            timer = setInterval(() => {
+                document.getElementById("caps").style.transition = `.5s linear`;
+                // document.getElementById("caps").style.transform = `rotate(180deg)`;
+                // document.getElementById("caps").style.transform = `rotate(181deg)`;
+                // document.getElementById("caps").style.width = `0`;
+                // document.getElementById("caps").style.height = `0`;
                 setTimeout(() => {
-                    document.getElementById("img").style.backgroundImage = `url("basa${j % 4 + 1}.jpg")`;
-                    // document.getElementById("img").style.transform = `rotate(360deg)`;
-                    // document.getElementById("img").style.width = `100vw`;
-                    // document.getElementById("img").style.height = `100vh`;
+                    document.getElementById("caps").style.backgroundImage = `url("caps/basa${j % 4 + 1}.jpg")`;
+                    // document.getElementById("caps").style.transform = `rotate(360deg)`;
+                    // document.getElementById("caps").style.width = `100vw`;
+                    // document.getElementById("caps").style.height = `100vh`;
                     j ++;
+                    if (j >= slides) {
+                        clearInterval(timer);
+                        document.getElementById("caps").style.opacity = 0;
+                    }
                 }, 500);
             }, 5000);
         }, 5000);
