@@ -1,0 +1,40 @@
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background: black;
+    overflow: hidden;
+}
+#img {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100vh;
+    width: 100vw;
+    background-image: url("basa1.jpg");
+    background-size: cover;
+    background-position: center center;
+    opacity: 0;
+    z-index: -10;
+    transition: 2s;
+}
+#stas {
+    font-family: "Arial Black";
+    color: white;
+    transition: .9s;
+}
+
+#btn {
+    background: none;
+    border: 1px solid white;
+    color: white;
+    padding: 15px 20px;
+    border-radius: 5px;
+    transition: .4s;
+}
+
+#btn:hover {
+    background: white;
+    color: black;
+}
