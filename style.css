@@ -19,13 +19,13 @@ body {
     z-index: -10;
     transition: 2s;
 }
-#stas {
+#loading_title {
     font-family: "Arial Black";
     color: white;
     transition: .9s;
 }
 
-#btn {
+#start_btn {
     background: none;
     border: 1px solid white;
     color: white;
@@ -34,7 +34,7 @@ body {
     transition: .4s;
 }
 
-#btn:hover {
+#start_btn:hover {
     background: white;
     color: black;
 }
