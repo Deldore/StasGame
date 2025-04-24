@@ -3,22 +3,31 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Парсер новостей Mail.ru</title>
+    <title>Стасополис | Не выжить</title>
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
+    <button id="start_game">Запустить игру</button>
+    <div id="message">
+        <h1></h1>
+        <p></p>
+        <div id="buttons">
+            <button id="next">Следующее</button>
+            <button id="skip">Пропустить</button>
+        </div>
+    </div>
+    <div id="notifications">
+        <div class="notification">
+            <p>Поздравляю Вы прошли "Знакомство"!</p>
+        </div>
+    </div>
+
     <div id="loading">
         <div id="caps"></div>
         <h1 id="loading_title"></h1>
         <button id="start_btn">Нажмите чтобы начать</button>
     </div>
-    <button id="start_game">Запустить игру</button>
-    <div id="message">
-        <h1></h1>
-        <p></p>
-        <button id="next">Следующее</button>
-        <button id="skip">Пропустить</button>
-    </div>
+
     <base href="/">
     <script type="importmap">
         {

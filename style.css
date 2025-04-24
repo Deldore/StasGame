@@ -6,6 +6,11 @@ body {
     background: black;
     overflow: hidden;
 }
+
+button {
+    z-index: 100;
+}
+
 #loading {
     transition: all linear .5s;
 
@@ -65,14 +70,10 @@ body {
     scrollbar-color: #ccc transparent;
     opacity: 0;
 
-     /*Улучшенные правила переноса */
-    /*word-break: break-word;*/
-    /*overflow-wrap: break-word;*/
-    /*hyphens: manual; !* Отключаем auto, так как он ненадежен *!*/
-
-    /* Для Safari */
-    /*-webkit-hyphens: auto;*/
-    /*-webkit-word-break: break-word;*/
+    #buttons {
+        display: flex;
+        gap: 10px;
+    }
 
     p, h1 {
         max-width: 100%;
@@ -98,5 +99,35 @@ body {
         font-size: 120%;
         padding: 5px 10px;
         border-radius: 5px;
+    }
+}
+
+#notifications {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: flex-end;
+    flex-direction: column;
+    align-items: center;
+    padding: 20px 5%;
+    box-sizing: border-box;
+    gap: 10px;
+    z-index: -10;
+
+    .notification {
+        display: flex;
+        min-width: 20%;
+        max-width: 40%;
+        min-height: 40px;
+        max-height: 7%;
+        background: white;
+        border-radius: 50px;
+        padding: 5px 20px;
+        box-sizing: border-box;
+        align-items: center;
+        font-family: Arial;
+        font-weight: bold;
+        transition: opacity linear .5s;
     }
 }
