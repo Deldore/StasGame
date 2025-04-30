@@ -44,13 +44,13 @@ Notification.init();
 
 btn.onclick = async () => {
     btn.style.display = 'none';
-    // await Loading.click();
+    await Loading.click();
     document.getElementById("start_game").style.display = 'block';
 }
 
 startBtn.onclick = async () => {
     startBtn.style.display = 'none';
-    await Missions.game(1);
+    await Missions.game(0);
     await Loading.ending();
 }
 
