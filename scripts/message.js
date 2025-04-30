@@ -26,10 +26,11 @@ export class Message {
             this.nextButton.style.display = 'none';
 
             // Обработчик для кнопки пропуска
-            const skipAllHandler = () => {
+            const skipAllHandler = async () => {
                 skipAll = true;
                 clearInterval(this.timer)
                 this.container.style.opacity = 0;
+                this.skipButton.onclick = null;
                 setTimeout(() => {
                     this.container.style.display = 'none';
                     resolve();
@@ -37,8 +38,8 @@ export class Message {
             };
 
             if (this.skipButton) {
-                this.skipButton.onclick = skipAllHandler;
                 this.skipButton.style.display = showSkipButton ? 'block' : 'none';
+                this.skipButton.onclick = skipAllHandler;
             }
 
             // Асинхронная обработка диалогов
@@ -87,7 +88,7 @@ export class Message {
 
                 const nextHandler = () => {
                     clearInterval(this.timer);
-                    this.nextButton.onclick = null;
+                    // this.nextButton.onclick = null;
                     resolve();
                 };
 
