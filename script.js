@@ -2,15 +2,22 @@ import Loading from "./scripts/loading"
 import {Message} from "./scripts/message";
 import Missions from "./scripts/missions";
 import Notification from "./scripts/notification";
+import Chat from "./scripts/chat";
 
 const btn = document.getElementById('start_btn')
 const startBtn = document.getElementById('start_game')
+const sendMessage = document.getElementById('send_message');
 const maxMessageWidth = 0.7
 
 const message = document.getElementById('message');
 const p = message.querySelector('p');
 
 message.style.maxWidth = `${maxMessageWidth * 100}%`;
+
+Missions.init();
+Message.init();
+Notification.init();
+Chat.init();
 
 function applyHyphens() {
     if (message.clientWidth >= window.innerWidth * maxMessageWidth) {
@@ -38,10 +45,6 @@ window.addEventListener('resize', applyHyphens);
 const observer = new ResizeObserver(applyHyphens);
 observer.observe(message);
 
-Missions.init();
-Message.init();
-Notification.init();
-
 btn.onclick = async () => {
     btn.style.display = 'none';
     await Loading.click();
@@ -50,7 +53,14 @@ btn.onclick = async () => {
 
 startBtn.onclick = async () => {
     startBtn.style.display = 'none';
-    await Missions.game(0);
+    await Missions.game(0 );
     await Loading.ending();
 }
+
+sendMessage.onclick = (e) => {
+    e.preventDefault()
+    Chat.sendMessage();
+}
+
+
 

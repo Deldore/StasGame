@@ -1,5 +1,6 @@
 import {Message} from "./message";
 import Notification from "./notification";
+import Chat from "./chat";
 
 export default class Missions {
     static missions = [];
@@ -34,6 +35,7 @@ export default class Missions {
     }
 
     static async startGame() {
+        Chat.show();
         return new Promise(async (resolve) => {
             await Message.showMessages('Приветствие', [
                 'Приветствую Вас, идиоты! Я очень рад, что вы решили запустить эту игру! Что ж, приступим к предыстории'], false)
